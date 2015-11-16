@@ -49,4 +49,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = hedley_company
 dependencies[] = hedley_event
 dependencies[] = hedley_file
+dependencies[] = hedley_github
 dependencies[] = hedley_restful
+
+features[foo] = bar
