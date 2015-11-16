@@ -7,7 +7,7 @@ $plugin = array(
   'entity_type' => 'restful_token_auth',
   'bundle' => 'access_token',
   'description' => t('Export the access token authentication resource.'),
-  'class' => 'ShoovGithubAuthAuthentication',
+  'class' => 'HedleyGithubAuthAuthentication',
   // We will implement hook_menu() with custom settings.
   'menu_item' => 'auth/github',
   // Don't list this resource in /api.

@@ -5,6 +5,16 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_directory().
+ */
+function hedley_github_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'restful') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+
+/**
  * Performs an HTTP request to GitHub and check for errors.
  *
  * @param string $url
