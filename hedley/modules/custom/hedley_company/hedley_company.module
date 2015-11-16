@@ -1,0 +1,9 @@
+<?php
+/**
+ * @file
+ * Code for the Hedley Company feature.
+ */
+
+include_once 'hedley_company.features.inc';
+
+

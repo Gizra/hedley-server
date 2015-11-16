@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Hedley Event feature.
+ */
+
+include_once 'hedley_event.features.inc';

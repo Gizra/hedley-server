@@ -1,0 +1,9 @@
+name = Hedley RESTFul
+core = 7.x
+package = Hedley
+dependencies[] = restful
+dependencies[] = entity_validator
+
+dependencies[] = hedley_company
+
+files[] = plugins/restful/node/HedleyEntityBaseNode.php
