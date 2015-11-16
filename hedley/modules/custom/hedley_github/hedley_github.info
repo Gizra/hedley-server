@@ -1,6 +1,9 @@
 name = Hedley GitHub
 core = 7.x
 package = Hedley
-
+dependencies[] = features
+dependencies[] = text
 features[features_api][] = api:2
+features[field_base][] = field_github_access_token
+features[field_instance][] = user-user-field_github_access_token
 project path = profiles/hedley/modules/custom
