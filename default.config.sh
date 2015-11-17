@@ -82,4 +82,6 @@ function post_install {
 # function post_upgrade {}
 
 # Post reset script.
-# function post_reset {}
+function post_reset {
+  post_install
+}
