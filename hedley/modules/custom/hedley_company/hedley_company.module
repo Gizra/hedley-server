@@ -6,4 +6,27 @@
 
 include_once 'hedley_company.features.inc';
 
+/**
+ * Implements hook_user_insert()
+ *
+ * For demo purposes we auto subscribe any new user to all existing groups.
+ */
+function hedley_company_user_insert(&$edit, $account, $category) {
+  $query = new EntityFieldQuery();
+  $result = $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'company')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->execute();
+
+  if (empty($result['node'])) {
+    return;
+  }
+
+  foreach (array_keys($result['node']) as $nid) {
+    og_group('node', $nid, array('entity' => $account));
+  }
+}
+
+
 
