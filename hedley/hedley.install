@@ -397,6 +397,7 @@ function hedley_standard_install() {
     'create article content',
     'edit own article content',
     'delete own article content',
+    'access user profiles',
   );
 
   user_role_grant_permissions(DRUPAL_AUTHENTICATED_RID, $perms);
