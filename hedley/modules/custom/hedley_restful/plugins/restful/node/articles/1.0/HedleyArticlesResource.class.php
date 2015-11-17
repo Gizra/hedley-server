@@ -13,20 +13,24 @@ class HedleyArticlesResource extends \HedleyEntityBaseNode {
   public function publicFieldsInfo() {
     $public_fields = parent::publicFieldsInfo();
 
-    $public_fields['location'] = array(
-      'property' => 'field_location',
-      'process_callbacks' => array(
-        array($this, 'processLocation'),
+    $public_fields['body'] = array(
+      'property' => 'body',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['tags'] = array(
+      'property' => 'field_tags',
+      'resource' => array(
+        'tags' => 'tags',
       ),
     );
 
-    $public_fields['user'] = array(
-      'property' => 'author',
-      'resource' => array(
-        'user' => array(
-          'name' => 'users',
-        ),
+    $public_fields['image'] = array(
+      'property' => 'field_image',
+      'process_callbacks' => array(
+        array($this, 'imageProcess'),
       ),
+      'image_styles' => array('thumbnail', 'medium', 'large'),
     );
 
     return $public_fields;
