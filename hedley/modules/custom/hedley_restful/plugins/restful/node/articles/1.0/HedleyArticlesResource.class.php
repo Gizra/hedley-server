@@ -33,22 +33,21 @@ class HedleyArticlesResource extends \HedleyEntityBaseNode {
       'image_styles' => array('thumbnail', 'medium', 'large'),
     );
 
+    $public_fields['user'] = array(
+      'property' => 'author',
+      'resource' => array(
+        // The bundle of the entity.
+        'user' => array(
+          // The name of the resource to map to.
+          'name' => 'users',
+          // Determines if the entire resource should appear, or only the ID.
+          'full_view' => TRUE,
+        ),
+      ),
+    );
+
+
     return $public_fields;
   }
 
-  /**
-   * Process callback; Clean the "location" field output.
-   *
-   * @param array $value
-   *   The entire array of the location field.
-   *
-   * @return array
-   *   Array keyed by "lat" and "lng".
-   */
-  protected function processLocation($value) {
-    return array(
-      'lat' => $value['lat'],
-      'lng' => $value['lng'],
-    );
-  }
 }
