@@ -5,13 +5,18 @@
  *
  * When a public file is uploaded, add a random key to its name in order to
  * make it hard to find.
+ *
+ * @todo: This doesn't work not for RESTful uploads.
  */
-function hedley_file_insert($file) {
+function hedley_file_file_insert($file) {
+
+  return;
+
   // Only handle public files.
   if (file_uri_scheme($file->uri) != 'public') {
     return;
   }
 
   $filename = drupal_random_key() . '_' . $file->filename;
-  file_move($file, 'public://' . $filename);
+  file_move($file, 'public://' . $filename, FILE_EXISTS_RENAME);
 }
